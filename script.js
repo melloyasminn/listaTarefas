@@ -1,7 +1,7 @@
-//criei uma função pra adicionar novas tarefas na lista aqui
+//cria uma função pra adicionar novas tarefas na lista aqui
 function add() {
-  //criei o elemento dos itens da lista (li)
-  let li = document.createElement("LI");
+  //cria o elemento dos itens da lista (li)
+  let li = document.createElement("li");
   //aqui pega o "valor" que foi escrito no formulário
   let input_value = document.form_main.task.value;
   let input_text = document.createTextNode(input_value);
@@ -9,7 +9,7 @@ function add() {
   li.appendChild(input_text);
   document.querySelector("ul").appendChild(li);
   document.form_main.task.value = "";
-  //aqui criei um botão de fechar pra cada elemento colocado na lista
+  //aqui cria um botão de fechar pra cada elemento colocado na lista
   createCloseButton(li);
 }
 //aqui é a função do botão de fechar
@@ -22,12 +22,13 @@ function createCloseButton(li) {
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
-
+//aqui faz o item da lista, quando clicado no "x" sumir
   span.onclick = () => (span.parentElement.style.display = "none");
 }
 
-document.querySelectorAll("li").forEach(createCloseButton);
 
+document.querySelectorAll("li").forEach(createCloseButton);
+//quando clica no elemento da lista, faz com que ele apareça riscado como tarefa feita0
 document.querySelector("ul").addEventListener("click", (e) => {
-  if (e.target.tagName === "LI") e.target.classList.toggle("checked");
+  if (e.target.tagName === "li") e.target.classList.toggle("checked");
 });
