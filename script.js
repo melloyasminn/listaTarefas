@@ -7,7 +7,7 @@ function add() {
   let input_text = document.createTextNode(input_value);
 
   li.appendChild(input_text);
-  document.querySelector("ul").appendChild(li);
+  document.querySelector("ol").appendChild(li);
   document.form_main.task.value = "";
   //aqui cria um botão de fechar pra cada elemento colocado na lista
   createCloseButton(li);
@@ -17,7 +17,7 @@ function createCloseButton(li) {
   // criei um span que esconde o elemento
   let span = document.createElement("SPAN");
   // aqui é o "x" que aparece em todos os elementos da lista, e que faz o elemento ser escondido ao clicar
-  let txt = document.createTextNode("\u00D7");
+let txt = document.createTextNode(	"\u2A02");
 
   span.className = "close";
   span.appendChild(txt);
